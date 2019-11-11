@@ -8,11 +8,11 @@ describe TweetsController do
     end
   end
 
-  describe "GET #edit" do
+  describe 'GET #edit' do
     it "assigns the requested tweet to @tweet" do
       tweet = create(:tweet)
       get :edit, params: { id: tweet }
-      expect(assigns(:tweet)).to eq tweet
+      expect(assigns(:tweets)).to eq tweet
     end
 
     it "renders the :edit template" do
@@ -26,7 +26,7 @@ describe TweetsController do
     it "populates an array of tweets ordered by created_at DESC" do
       tweets = create_list(:tweet, 3)
       get :index
-      expect(assigns(:tweets)).to match(tweets.sort{|a,b| b.created_at <=> a.created_at })
+      expect(assigns(:tweets)).to match(tweets.sort{|a, b| b.created_at <=> a.created_at })
     end
 
     it "renders the :index template" do
