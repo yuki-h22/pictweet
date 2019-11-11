@@ -20,6 +20,7 @@ before_action :set_tweet, only: [:edit, :show]
   end
 
   def edit
+    @tweet = Tweet.find(params[:id])
   end
 
   def update
