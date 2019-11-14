@@ -22,8 +22,8 @@
   </div>
   <div class="container">
     <% if current_user %>
-      <%= form_with(:image, id: "new_comment") do |form| %> 
-        <%= form.text_area :image, class: "textbox" %>
+      <%= form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form| %> 
+        <%= form.text_area :text, placeholder: "コメントする" , rows: "2", class: "textbox" %>
         <%= form.submit "SEND", class: "form__submit" %>
       <% end %>
     <% else %>
