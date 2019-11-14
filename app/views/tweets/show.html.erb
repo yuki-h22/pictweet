@@ -22,9 +22,10 @@
   </div>
   <div class="container">
     <% if current_user %>
-      <%= form_with(..., id: "new_comment") do |form| %> 
-        <%= form.text_area ..., class: "textbox" %>
-        <%= form.submit "SEND", class: "form__submit" %>      <% end %>
+      <%= form_with(:image, id: "new_comment") do |form| %> 
+        <%= form.text_area :image, class: "textbox" %>
+        <%= form.submit "SEND", class: "form__submit" %>
+      <% end %>
     <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
