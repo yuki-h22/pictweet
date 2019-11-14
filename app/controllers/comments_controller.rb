@@ -4,10 +4,11 @@ class CommentsController < ApplicationController
     respond_to do |frmat|
       format.html { redirect_to tweet_path(params[:tweer_id]) }
       format.json
+    end
   end
 
   private
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, tweet_id: params[:tweet_id])
-   end
+  end
 end
